@@ -31,5 +31,7 @@ TEST_CASE( "timer init", "[timer]") {
     };
     auto t1 = s.add_timer(100, 100, cb1);
     auto t2 = s.add_timer(200, 200, cb2);
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+    t2->cancel();
     std::this_thread::sleep_for(std::chrono::seconds(5));
 }
