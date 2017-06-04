@@ -8,7 +8,7 @@ SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
 
 include_directories(./include)
 aux_source_directory(src DIR_SRCS)
-
+link_libraries(pthread)
 message(${DIR_SRCS})
 message(${PROJECT_NAME})
 add_executable(${PROJECT_NAME} ${DIR_SRCS})
